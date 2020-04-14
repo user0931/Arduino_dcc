@@ -91,7 +91,7 @@ void notifyDccSigOutputState( uint16_t Addr, uint8_t State)
 
 void setup()
 {
-  Serial.begin(115200);
+  Serial.begin(19200);
   
   // Configure the DCC CV Programing ACK pin for an output
   pinMode( DccAckPin, OUTPUT );
