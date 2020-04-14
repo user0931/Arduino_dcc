@@ -42,7 +42,7 @@ void notifyCVAck(void)
 }
 
 // Uncomment to print all DCC Packets
-//#define NOTIFY_DCC_MSG
+#define NOTIFY_DCC_MSG
 #ifdef  NOTIFY_DCC_MSG
 void notifyDccMsg( DCC_MSG * Msg)
 {
