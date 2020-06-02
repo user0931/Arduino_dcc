@@ -32,10 +32,10 @@ void setup() {
 // Copy & Paste as many times as you have accessories 
 // The amount must be same as NUMACCESSORIES
 // Don't forget to increment the array index
-  accessory[0].address   =  1; // DCC address
+  accessory[0].address   = 77; // DCC address
   accessory[0].outputpin = 13; // Arduino pin
 
-  accessory[1].address   =  2; // DCC address
+  accessory[1].address   = 78; // DCC address
   accessory[1].outputpin = 12; // Arduino pin
 // END OF CONFIGURATION OF ACCESSORIES
 
@@ -52,9 +52,19 @@ void loop() {
   DCC.loop(); // Call to library function that reads the DCC data
 
   for(byte i=0; i<NUMACCESSORIES; i++) {
-    if (accessory[i].dccstate)
+    if (accessory[i].dccstate) {
       digitalWrite(accessory[i].outputpin, HIGH);
-    else
+      Serial.print("Activado el accessory[i] en high");
+      Serial.print("el valor de i es **");
+      Serial.print(i);
+      Serial.println("**");
+    }
+    else   {
       digitalWrite(accessory[i].outputpin, LOW);
+      Serial.print("Activado el accessory[i] en low");
+      Serial.print("el valor de i es **");
+      Serial.print(i);
+      Serial.println("**");
+    }
   }
 }
